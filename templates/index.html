@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AES Encryption</title>
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    </head>
+    <body>
+        <div class="container vertical-center">
+            <div class="col-md-12 box">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="plain-text">Message</label>
+                        <input type="text" class="form-control" id="plain-text"/>
+                    </div>
+                    <div class="form-group col-md-6">
+                            <label for="ciphertext">Ciphertext</label>
+                            <input type="text" class="form-control" id="ciphertext"/>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="input-group form-group">
+                        <input type="text" class="form-control" id="key" readonly disabled/>
+                        <button type="button" class="btn btn-danger" onclick="generateKey()">Generate Key</button>
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <button type="button" class="btn btn-dark btn-lg btn-block" onclick="encrypt()">Encrypt</button>
+                    <button type="button" class="btn btn-warning btn-lg btn-block" onclick="decrypt()">Decrypt</button>
+                </div>
+            </div>
+            
+        </form>
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+        <script src="{{ url_for('static', filename='index.js') }}" type="text/javascript"></script>
+    </body>
+</html>
